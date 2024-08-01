@@ -1,5 +1,5 @@
 FROM squidfunk/mkdocs-material:9.5.27
-COPY mkdocs.yml /mkdocs.yml
+COPY mkdocs.yml mkdocs.yml
 WORKDIR /docs
 RUN pip install mkdocs-static-i18n[material]
 RUN pip install mike
