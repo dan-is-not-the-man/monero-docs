@@ -2,7 +2,7 @@
 site_name: Monero Documentation
 site_description: 'Unofficial but soon to be Offical Monero Documentation'
 site_author: "dan-is-not-the-man"
-site_url: 'https://https://md.demo.degooglemonero.com/'
+site_url: 'https://md.demo.degooglemonero.com/'
 site_dir: 'public'
 
 copyright: ' 2024 Monero Community <a href="https://opensource.org/licenses/MIT">MIT</a>'
