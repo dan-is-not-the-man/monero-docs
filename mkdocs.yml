@@ -126,6 +126,7 @@ markdown_extensions:
   - pymdownx.snippets            # insert content from other files
 
 plugins:
+  - privacy
   - search
   - minify:
       minify_html: true
