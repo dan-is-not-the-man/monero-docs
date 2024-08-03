@@ -93,6 +93,16 @@ theme:
   icon:
     logo: logo
   logo: 'assets/monero-symbol-on-white-1280.png'
+  palette:
+    primary: white
+  features:
+    - navigation.expand
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - toc.follow
+    - toc.integrate
+
 
 extra_css: ['overrides.css']
 
