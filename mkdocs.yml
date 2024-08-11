@@ -5,7 +5,7 @@ site_author: "dan-is-not-the-man"
 site_url: 'https://md.demo.degooglemonero.com/'
 site_dir: 'public'
 
-copyright: ' © 2024 Monero Community <a href="https://opensource.org/licenses/MIT">MIT</a>'
+copyright: '  2024 Monero Community <a href="https://opensource.org/licenses/MIT">MIT</a>'
 
 nav:
 - Home: 'index.md'
