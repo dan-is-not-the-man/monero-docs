@@ -1,11 +1,11 @@
- # Project information
+# Project information
 site_name: Monero Documentation
 site_description: 'Unofficial but soon to be Offical Monero Documentation'
 site_author: "dan-is-not-the-man"
 site_url: 'https://md.demo.degooglemonero.com/'
 site_dir: 'public'
 
-copyright: '  Copyright &#169; 2024 Monero Community, 2017 - 2024 <a href="https://github.com/monerodocs/md">Monerodocs</a> under licence <a href="https://opensource.org/licenses/MIT">MIT</a>'
+copyright: 'Copyright &#169; 2024 Monero Community <a href="https://opensource.org/licenses/MIT">MIT</a>'
 
 nav:
 - Home: 'index.md'
@@ -64,12 +64,9 @@ theme:
   custom_dir: docs/overrides
   font:
     code: Roboto Mono
-
-
-  # 404 page
-  static_templates:
-    - 404.html
-
+#   404 page
+#  static_templates:
+#    - 404.html
   # Necessary for search to work properly
   include_search_page: false
   search_index_only: true
@@ -90,11 +87,6 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-  icon:
-    logo: logo
-  logo: 'assets/monero-symbol-on-white-1280.png'
-  palette:
-    primary: white
   features:
     - navigation.expand
     - navigation.indexes
@@ -102,12 +94,15 @@ theme:
     - navigation.tabs
     - toc.follow
     - toc.integrate
-
+  icon:
+    logo: logo
+  logo: 'assets/monero-symbol-on-white-1280.png'
 
 extra_css: ['overrides.css']
 
 repo_name: 'dan-is-not-the-man/monero-docs'
 repo_url: 'https://github.com/dan-is-not-the-man/monero-docs'
+
 
 markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/extensions/admonition/
@@ -124,10 +119,20 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.superfences         # nest code blocks inside codeblocks
   - pymdownx.snippets            # insert content from other files
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
   - privacy
   - search
+  - table-reader:
+      base_path: "config_dir"
+      data_path: "docs/assets/tables/"
+      select_readers:
+        - read_csv
+        - read_raw
   - minify:
       minify_html: true
       minify_js: true
@@ -148,8 +153,8 @@ plugins:
           build: true
           nav_translations:
             Home: Sommaire
-            Accepting Monero: Acceptation de Monero
-            Interacting: Interaction
+            Accepting Monero: Acceptation de Monero 
+            Interacting: Interaction 
             Technical specs: Caractéristiques techniques
             Cryptography: Cryptographie
             Address: Adresse
@@ -158,10 +163,7 @@ plugins:
             Infrastructure: Infrastructure
             Running a Node: Courir un nœud
             Cold storage: Stockage à froid
- # - git-revision-date-localized:
- #      fallback_to_build_date: true
 
-extra:
-  version:
-    provider: mike
-  generator: false
+  - git-revision-date-localized:
+       fallback_to_build_date: true
+
