@@ -1,4 +1,4 @@
-FROM squidfunk/mkdocs-material:9.5.27@sha256:9919d6ee948705ce6cd05e5bc0848af47de4f037afd7c3b91e776e7b119618a4 AS build
+FROM squidfunk/mkdocs-material:9.5.32@sha256:a73e4bbbccb09e5374cef28ebe68511c166222274f8486b25ad467ec1f5e8bbe AS build
 COPY mkdocs.yml ./mkdocs.yml
 COPY docs/ /docs/docs/
 RUN pip install mkdocs-static-i18n[material] && pip3 install mkdocs-git-revision-date-localized-plugin && pip install mkdocs-table-reader-plugin
