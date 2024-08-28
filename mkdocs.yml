@@ -100,6 +100,15 @@ theme:
 
 extra_css: ['overrides.css']
 
+extra:
+  social:
+    - icon: fontawesome/brands/monero
+      link: monero:888tNkZrPN6JsEgekjMnABU4TBzc2Dt29EPAvkRxbANsAnjyPbb3iQ1YBRk1UXcdRsiKc9dhwMVgN5S9cQUiyoogDavup3H
+      name: Monero General Fund
+    - icon: simple/torproject
+      link: http://tdixqgjcdxig6qw62pai5bljg4ysssvnql7aq47ibnxtvx3tfx7hvhqd.onion/
+      name: onion address
+
 repo_name: 'dan-is-not-the-man/monero-docs'
 repo_url: 'https://github.com/dan-is-not-the-man/monero-docs'
 
