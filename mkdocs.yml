@@ -108,6 +108,9 @@ extra:
     - icon: simple/torproject
       link: http://tdixqgjcdxig6qw62pai5bljg4ysssvnql7aq47ibnxtvx3tfx7hvhqd.onion/
       name: onion address
+    - icon: simple/matrix
+      link: https://matrix.to/#/#monero-docs:monero.social
+
 
 repo_name: 'dan-is-not-the-man/monero-docs'
 repo_url: 'https://github.com/dan-is-not-the-man/monero-docs'
