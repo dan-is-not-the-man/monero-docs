@@ -1,27 +1,21 @@
-FROM squidfunk/mkdocs-material:9.5.33@sha256:7132ca3957c1fc325443579356fcc68696cd1aa54c715ce61228ea5e0b2d427a AS build
+FROM squidfunk/mkdocs-material:9.5.34@sha256:a2e3a31c00cfe1dd2dae83ba21dbfa2c04aee2fa2414275c230c27b91a4eda09 AS build
 COPY mkdocs.yml ./mkdocs.yml
 COPY docs/ /docs/docs/
-RUN pip install mkdocs-static-i18n[material] && pip3 install mkdocs-git-revision-date-localized-plugin && pip install mkdocs-table-reader-plugin && && pip install mkdocs-htmlproofer-plugin
+RUN pip install mkdocs-static-i18n[material] && pip3 install mkdocs-git-revision-date-localized-plugin && pip install mkdocs-table-reader-plugin
 RUN mkdocs build
 
-FROM nginx:alpine
+FROM caddy:2.8.4-alpine@sha256:b29f8188b594a5dc462553f5488b4f268294c622add2bfe0e775541bbe08130a
 
-COPY --from=build /docs/public /usr/share/nginx/html
+COPY --from=build /docs/public /srv
 
-# Inline Nginx configuration
-RUN echo 'server { \
-    listen 80; \
-    root /usr/share/nginx/html; \
-    index index.html index.htm; \
-    error_page 404 /404.html; \
-    location = /404.html { \
-        internal; \
-    } \
-    location / { \
-        try_files $uri $uri/ =404; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
+# Inline Caddy configuration
+RUN { \
+    echo ":80 {"; \
+    echo "    root * /srv"; \
+    echo "    file_server"; \
+    echo "}"; \
+} > /etc/caddy/Caddyfile
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
