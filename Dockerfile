@@ -30,6 +30,11 @@ RUN { \
     echo ":80 {"; \
     echo "    import common"; \
     echo "    root * /srv"; \
+    echo "    handle_errors {"; \
+    echo "        rewrite * /404.html"; \
+    echo "    file_server"; \
+    echo "    }"; \
+    echo "    try_files {path} {path}/ /404.html"; \
     echo "    file_server"; \
     echo "}"; \
 } > /etc/caddy/Caddyfile
