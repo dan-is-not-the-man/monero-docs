@@ -195,3 +195,20 @@ plugins:
         - locale: nb
           name: Norsk Bokmål
           build: true
+
+  - htmlproofer:
+#raise an error and fail the build on first bad url status
+#      raise_error: True
+#fail the build on at least one bad url status after all links have been checked
+      raise_error_after_finish: True
+      ignore_urls:
+        - /cryptography/*
+        - /interacting/*
+        - /technical-specs/*
+        - /public-address/*
+        - /proof-of-work/*
+        - /multisignature/*
+        - /infrastructure/*
+        - /running-node/*
+        - /cold-storage/*
+        - /accepting-monero/*
