@@ -212,3 +212,5 @@ plugins:
         - /running-node/*
         - /cold-storage/*
         - /accepting-monero/*
+        - https://downloads.getmonero.org/blockchain.raw
+
