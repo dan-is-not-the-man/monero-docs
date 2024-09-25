@@ -1,5 +1,6 @@
 ---
 title: Running Monero Open Node with Tor Onion Support
+render_macros: false
 ---
 # Running Monero Open Node + Tor Onion
 
@@ -18,7 +19,7 @@ title: Running Monero Open Node with Tor Onion Support
 ??? warning "May be resource intensive"
     Providing a Public RPC may use a sizeable amount of resources on your PC.
 
-    If you have concerns about data/bandwidth, CPU or RAM usage, you may disable the `public-node` setting by commenting [#] or deleting the line from the [config](#config) 
+    If you have concerns about data/bandwidth, CPU or RAM usage, you may disable the `public-node` setting by commenting [#] or deleting the line from the [config][monero-config] 
 
 ## Why run this specific setup?
 
@@ -143,6 +144,7 @@ Some commands assume Ubuntu but you will easily translate them to your distribut
     ```
 
     ### **Monerod Config**
+[](){#monero-config}
 
 6. Create `/etc/monero/monerod.conf` as shown below and **replace `PASTE_YOUR_ONION_HOSTNAME` with your Onion address**.
 

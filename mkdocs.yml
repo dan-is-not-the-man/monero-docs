@@ -233,3 +233,4 @@ plugins:
         - locale: nb
           name: Norsk Bokmål
           build: false
+  - autorefs
